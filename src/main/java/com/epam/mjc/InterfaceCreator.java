@@ -6,10 +6,14 @@ public class InterfaceCreator {
 
     public Operation<Integer> divideBy(Integer divider) {
 
-        //throw new UnsupportedOperationException("You should implement this method.");
-        return (List<Integer> list) -> {
-            list.replaceAll(item -> item/divider);
-            return list;
-        };
+        try {
+            return (List<Integer> list) -> {
+                list.replaceAll(item -> item / divider);
+                return list;
+            };
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        throw new UnsupportedOperationException("You should implement this method.");
     }
 }
